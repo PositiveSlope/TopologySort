@@ -14,7 +14,7 @@ DirectedGraph::DirectedGraph(Edge *edges, int size) {
 }
 
 DirectedGraph::~DirectedGraph() {
-    for (auto it = nodes.begin(); it != nodes.end(); it++) {
+    for (auto it = nodes.begin(); it != nodes.end(); it++) {//i see you use auto it, I too used auto it
         delete (*it).second;
     }
 }
@@ -33,33 +33,32 @@ void DirectedGraph::printGraph() {
 //their for loops still confused me
 void DirectedGraph::topologySort(int val, LinkedStack<int> &stack, set<int> &visited){
     visited.insert(val);//mark that this node was visited
-    if (nodes.at(val) == nullptr) {//return if no children (if its a leaf)
+    if(nodes.at(val)==nullptr){//return if no children (if its a leaf)
         return;
     }
-    for (SingleLinkedList<int>::Iterator it = nodes.at(val)->begin(); it != nodes.at(val)->end(); it++) {
-        if (!visited.count(*it)) {
-            topologySort(*it, stack, visited);
+    for(auto i=nodes.at(val)->begin();i!=nodes.at(val)->end();++i){
+        if(!visited.count(*i)){
+            topologySort(*i,stack,visited);
         }
     }
     stack.push(val);
 }
 vector<int> *DirectedGraph::topologySort() {
 	// homework
-	auto stack = new LinkedStack<int>;
-	auto visited = new set<int>;
+	auto stack=new LinkedStack<int>;
+	auto visited=new set<int>;
 	//struggled with finding children using map type
 	//I would try to change the parameters of the recursive function, but cant use anything besides linkedstack
     //so map looked like way to go
     //to cycle through, used an iterator https://www.geeksforgeeks.org/topological-sorting/
-    map<int, SingleLinkedList<int>*>::iterator i;
-    for (i = nodes.begin(); i != nodes.end(); ++i) {
-        if (!visited->count(i->first)) {
-            topologySort(i->first, *stack, *visited);
+    for(auto i=nodes.begin();i!=nodes.end();++i){
+        if(!visited->count(i->first)){
+            topologySort(i->first,*stack,*visited);
         }
     }
-    vector<int>* ans = new vector<int>();
-    while (!stack->isEmpty()) {
-        ans->push_back(stack->peek());
+    vector<int>* ans=new vector<int>();
+    while(!stack->isEmpty()){
+        ans->push_back(stack->peek());//push thing on top
         stack->pop();
     }
     return ans;
