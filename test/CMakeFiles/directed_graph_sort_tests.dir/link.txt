@@ -1,1 +1,1 @@
-/usr/bin/c++  -DDEBUG -DRESERVE_CAPACITY -fprofile-arcs -ftest-coverage   CMakeFiles/directed_graph_sort_tests.dir/main.cpp.o CMakeFiles/directed_graph_sort_tests.dir/DirectedGraphSortTest.cpp.o  -o ../bin/directed_graph_sort_tests ../lib/libdirected_graph.a ../lib/libgtest.a -lpthread 
+/usr/bin/c++  -DDEBUG -DRESERVE_CAPACITY -fprofile-arcs -ftest-coverage -g   CMakeFiles/directed_graph_sort_tests.dir/main.cpp.o CMakeFiles/directed_graph_sort_tests.dir/DirectedGraphSortTest.cpp.o  -o ../bin/directed_graph_sort_tests ../lib/libdirected_graph.a ../lib/libgtest.a -lpthread 

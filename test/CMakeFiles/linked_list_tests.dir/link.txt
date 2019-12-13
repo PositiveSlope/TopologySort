@@ -1,1 +1,1 @@
-/usr/bin/c++  -DDEBUG -DRESERVE_CAPACITY -fprofile-arcs -ftest-coverage   CMakeFiles/linked_list_tests.dir/main.cpp.o CMakeFiles/linked_list_tests.dir/LinkedListTest.cpp.o  -o ../bin/linked_list_tests ../lib/libgtest.a -lpthread 
+/usr/bin/c++  -DDEBUG -DRESERVE_CAPACITY -fprofile-arcs -ftest-coverage -g   CMakeFiles/linked_list_tests.dir/main.cpp.o CMakeFiles/linked_list_tests.dir/LinkedListTest.cpp.o  -o ../bin/linked_list_tests ../lib/libgtest.a -lpthread 

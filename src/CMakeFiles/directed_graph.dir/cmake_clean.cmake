@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../lib/libdirected_graph.a"
-  "../lib/libdirected_graph.pdb"
   "CMakeFiles/directed_graph.dir/DirectedGraph.cpp.o"
+  "../lib/libdirected_graph.pdb"
+  "../lib/libdirected_graph.a"
 )
 
 # Per-language clean rules from dependency scanning.

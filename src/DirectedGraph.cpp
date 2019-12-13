@@ -52,9 +52,10 @@ vector<int> *DirectedGraph::topologySort() {
     //so map looked like way to go
     //to cycle through, used an iterator https://www.geeksforgeeks.org/topological-sorting/
     for(auto i=nodes.begin();i!=nodes.end();++i){
-        if(!visited->count(i->first)){
-            topologySort(i->first,*stack,*visited);
+        if(visited->count(i->first)){
+            continue;
         }
+        topologySort(i->first,*stack,*visited);
     }
     vector<int>* ans=new vector<int>();
     while(!stack->isEmpty()){
